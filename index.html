@@ -11,6 +11,31 @@
 <div id="banner">
     <div id="mensagem">Descubra o Mundo do Café: Aromas, Sabores e História!!</div>
 </div>
+
+<script>
+    var mensagemElement = document.getElementById("mensagem");
+    var bannerWidth = document.getElementById("banner").offsetWidth;
+
+    function animarMensagem() {
+        var left = -200; // Inicializa a posição à esquerda da tela
+        var interval = setInterval(function() {
+            left += 5; // Move 5 pixels à direita a cada iteração
+            mensagemElement.style.left = left + "px";
+
+            // Verifica se a mensagem atingiu o final do banner
+            if (left >= bannerWidth) {
+                clearInterval(interval); // Para a animação
+                setTimeout(function() {
+                    mensagemElement.style.left = "-200px"; // Reinicia a mensagem à esquerda
+                    animarMensagem(); // Inicia a animação novamente
+                }, 1000); // Espera 1 segundo antes de reiniciar
+            }
+        }, 30); // Intervalo de 30 milissegundos para suavizar a animação
+    }
+
+    animarMensagem(); // Inicia a animação quando a página carrega
+</script>
+
    
     <p>"O aroma do café recém-preparado pela manhã é um convite irresistível para começar o dia com energia e sabor."</p>
     <p>
@@ -30,7 +55,28 @@
     <div class="imagensCafe">
     <img src="cafe.jpg">
 </div>
+<div class="image-container">
+    <img src="imagem1.jpg" alt="Imagem 1">
+    <img src="imagem2.jpg" alt="Imagem 2">
+    <img src="imagem3.jpg" alt="Imagem 3">
+</div>
+<section id="listas">
+<h2> Café é bom com </h2>
+<ol>
+    <li> Café com Leite</li>
+    <li> Café com Canela  </li>
+    <li> Café com Chocolate   </li>
+    </ol>
+    <h2> Para acompanhar o Café </h2>
 
 
+    <ul>
+        <li> Café com Bolo</li>
+        <li> Café com Bolacha  </li>
+        <li> Café com Pão </li>
+    </ul>
+
+</ul>
+</section>
 </body>
 </html>
